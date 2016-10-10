@@ -1,0 +1,66 @@
+package arrays;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+public class EmployeeList {
+    public static void main(String[] args) {
+        ArrayList<Integer> empList = new ArrayList<Integer>();
+        // add() method to add elements
+        empList.add(123);
+        empList.add(124);
+        empList.add(125);
+        empList.add(126);
+        empList.add(127);
+        empList.add(128);
+        System.out.println("Display entire array : " + empList);
+        System.out.println("Display first elemnt : " + empList.get(0));
+        System.out.println("Size of the array : " + empList.size());
+        empList.remove(2);
+        System.out
+                     .println("Display entire array after removing element at index '2' : "
+                                   + empList);
+        System.out
+                     .println("Size of the array after removing element at index '2' : "
+                                   + empList.size());
+
+        List<Integer> newEmployees = Arrays.asList(new Integer[] { 10, 20, 30,
+                     40 });
+
+        // Appends all of the elements in the specified collection to the end of
+        // this list, in the order
+        // that they are returned by the specified collection's iterator
+        empList.addAll(newEmployees);
+
+        // Inserts the specified element at the specified position in this list
+        empList.add(1, 400);
+        System.out.println(" List of new employees : \n" + empList);
+
+        List<Integer> oldEmployees = Arrays.asList(new Integer[] { 124, 126, 127 });
+        empList.removeAll(oldEmployees);
+        System.out.println(" List of employees after removing old employees: \n"
+                                   + empList);
+        
+        
+        
+        // create an empty array list with an initial capacity
+           ArrayList<Integer> arrlist = new ArrayList<Integer>(5);
+
+           // use add method to add elements
+           arrlist.add(10);
+           arrlist.add(50);
+           arrlist.add(30);
+               
+           System.out.println(" Size of arrlist : "+arrlist.size());
+           // this will increase the capacity of the ArrayList to 15 elements
+           arrlist.ensureCapacity(15);
+           System.out.println(" Size of arrlist : "+arrlist.size());
+           // let us print all the elements available in list
+           for (Integer number : arrlist) {
+           System.out.println("Number = " + number);
+
+ }
+    }
+}

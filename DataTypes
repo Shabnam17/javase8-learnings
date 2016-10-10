@@ -1,0 +1,39 @@
+public static void main(String[] args){
+	       
+	       // implicit casting
+	       byte a = 10;
+	       int b = a;
+	       System.out.println(a);
+	       System.out.println("implicit casting for up casting : "+b);
+	       
+	       //explicit casting
+	       int c = 10;
+	       byte d = (byte) c;
+	       System.out.println(c);
+	       System.out.println("using explicit casting for down casting : "+d);
+
+	       int num1 = 55555;
+	       long num2 = 66666;
+	       int num4 = 66666;
+	       long num3;
+	       long num6;
+	       num3 = num1*num2;
+	       num6 = num1*num4;
+	       System.out.println("num1 : "+num1);
+	       System.out.println(" Potential issue >> Unexpected value due to loss of data when the product exceeded maxm holding capacity of int >> num6 : "+num6);
+	    System.out.println("num2 : "+num2);
+	   
+	       System.out.println("num3 : "+num3);
+	System.out.println("num3 > max int range.. So one of the operating variable should be declared long ");
+	       System.out.println("max int range : 2147483648");
+	       
+	       
+	       //Caution with promotion
+	       int a1 = 7;
+	       int a2 = 2;
+	       double b2 = 2;
+	       double a3 = a1/a2;
+	       double b3 = a1/b2;
+	       System.out.println("Potential loss happens.. for 7/2 : "+a3);
+	       System.out.println("Potential solution when one of the variable is declared double.. : "+b3);
+	}
