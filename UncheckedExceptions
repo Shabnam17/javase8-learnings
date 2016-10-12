@@ -1,0 +1,91 @@
+package exceptions;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class UncheckedException {
+	public String printMessage(String parent, String child){
+		if(parent == null){
+			throw new IllegalArgumentException();
+		}
+		return parent+" "+child;
+	}
+	
+	public void forceNumberFormatException(){
+//		 Short.parseShort("You too Brutus"); 
+//		 Double.parseDouble("INVALID");
+		 System.out.println(Integer.parseInt("inbhh"));
+	}
+	
+	public void forceArrayIndexOutOfBoundsException(){
+//	int[] arr = new int[3];
+//	arr[0] = 9;
+//	arr[3] = 8;
+		
+		Float[][] num = new Float[3][3];
+		num[2][0]=4.3f;
+		num[2][1]= (float) 9.9;
+		System.out.println("num[2][2] : "+num[2][2]);
+		System.out.println("num[3][3] : "+num[3][3]);
+	}
+	
+	public void forceIndexOutOfBoundsException(){
+		List<String> fruits = new LinkedList<String>();
+		fruits.add("Mangoes");
+		fruits.add("Banana");
+		fruits.add("Raspberry");
+		System.out.println("Fruits : "+fruits);
+		System.out.println(fruits.get(6));
+	}
+	
+	public void forceIllegalStateException(){
+		List<String> chord = new ArrayList<String>();
+		chord.add("A");
+		chord.add("B");
+		chord.add("C");
+		chord.add("D");
+		Iterator it = chord.iterator();
+		while(it.hasNext()){
+			it.next();
+		    it.remove();
+		    it.remove();
+		}
+		System.out.println("chord : "+chord);
+	}
+	
+	public void forceClassCastException(){
+		  Object x = new Float("1.8");
+	    System.out.println((String)x);	
+	    Error ee = new Error();
+	    ee.getSuppressed();
+	}
+	
+	public void forceStackOverFlowError(){
+		Integer counter = 0;
+		ArrayList<Integer> unstoppable = new ArrayList<Integer>();
+		while(true)
+		{
+			unstoppable.add(counter);
+			counter++;
+			if(counter%1000 == 0){
+				System.out.println(counter);
+			}
+		}
+	}
+	
+	
+	public static void main(String args[]){
+		UncheckedException obj1 = new UncheckedException();
+// uncomment one by one to learn the various exceptions
+        //  System.out.println(obj1.printMessage(null, " Hi "));
+//		System.out.println("the double value for the given string : ");
+//		obj1.forceNumberFormatException();
+//		obj1.forceArrayIndexOutOfBoundsException();
+//    	obj1.forceIndexOutOfBoundsException();
+//		obj1.forceIllegalStateException();
+		obj1.forceClassCastException();
+	//	obj1.forceStackOverFlowError();
+	}
+}
